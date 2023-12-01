@@ -17,8 +17,31 @@ public class BoardServiceImpl implements BoardService {
         this.iBoardDao = iBoardDao;
     }
 
+    /**
+     * 게시판 리스트 조회 서비스
+     */
     @Override
     public List<BoardDto> selectBoardList() throws Exception {
         return iBoardDao.selectBoardList();
+    }
+
+    /**
+     * 게시판 글 등록 서비스
+     */
+    @Override
+    public void insertBoard(BoardDto board) throws Exception {
+        iBoardDao.insertBoard(board);
+    }
+
+    /**
+     * 게시글 세부 조회
+     */
+    @Override
+    public BoardDto selectBoardDetail(int boardIdx) throws Exception {
+        iBoardDao.updateHitCount(boardIdx);
+
+        BoardDto board = iBoardDao.selectBoardDetail(boardIdx);
+
+        return board;
     }
 }
