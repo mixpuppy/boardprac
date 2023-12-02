@@ -44,4 +44,18 @@ public class BoardServiceImpl implements BoardService {
 
         return board;
     }
+    /**
+     * 게시글 수정
+     */
+    @Override
+    public void updateBoard(BoardDto board) throws Exception {
+        iBoardDao.updateBoard(board);
+    }
+    /**
+     * 게시글 삭제
+     */
+    @Override
+    public void deleteBoard(int boardIdx) throws Exception {
+        iBoardDao.deleteBoard(boardIdx);
+    }
 }

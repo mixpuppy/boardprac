@@ -62,4 +62,21 @@ public class BoardController {
 
         return mv;
     }
+    /**
+     * 글 수정 요청 컨트롤러
+     */
+    @RequestMapping("/board/updateBoard.do")
+    public String updateBoard(BoardDto board) throws Exception {
+        boardService.updateBoard(board);
+        return "redirect:/board/openBoardList.do";
+    }
+    /**
+     * 글 삭제 요청 컨트롤러
+     */
+    @RequestMapping("/board/deleteBoard.do")
+    public String deleteBoard(int boardIdx) throws Exception {
+        boardService.deleteBoard(boardIdx);
+        return "redirect:/board/openBoardList.do";
+    }
+
 }

@@ -15,4 +15,8 @@
         void updateHitCount(int boardIdx) throws Exception;
         // 게시글 세부 조회
         BoardDto selectBoardDetail(int boardIdx) throws Exception;
+        // 게시글 수정
+        void updateBoard(BoardDto board) throws Exception;
+        // 게시글 삭제
+        void deleteBoard(int boardIdx) throws Exception;
     }
