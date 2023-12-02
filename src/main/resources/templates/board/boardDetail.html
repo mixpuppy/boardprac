@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>board</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -52,26 +53,10 @@
     <input type="button" id="edit" value="수정하기">
     <input type="button" id="delete" value="삭제하기">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#list").on("click", function(){
-                location.href = "openBoardList.do";
-            });
-
-            $("#edit").on("click", function(){
-                var frm = $("#frm")[0];
-                frm.action = "updateBoard.do";
-                frm.submit();
-            });
-
-            $("#delete").on("click", function(){
-                var frm = $("#frm")[0];
-                frm.action = "deleteBoard.do";
-                frm.submit();
-            });
-        })
-    </script>
+    <!--  절대경로 js 추가  -->
+    <script src="/javascript/boardDetail.js"></script>
+    <!--  상대경로 js 추가 방식  -->
+<!--    <script src="../../static/javascript/boardDetail.js"></script>-->
 </div>
 </body>
 </html>
