@@ -18,7 +18,7 @@
 
 
     <!-- 로거 -->
-    <logger name="board" level="INFO" appender-ref="console"/>
+    <logger name="board" level="DEBUG" appender-ref="console"/>
     <logger name="controller" level="DEBUG" appender-ref="console"/>
 
     <logger name="jdbc" level="OFF"/>
