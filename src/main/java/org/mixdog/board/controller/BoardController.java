@@ -5,6 +5,7 @@ import org.mixdog.board.dto.BoardDto;
 import org.mixdog.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,6 +37,8 @@ public class BoardController {
 
         log.debug("리스트 불러왔정");
         ModelAndView mv = new ModelAndView("/board/boardList");
+
+        int i = 10/0;
 
         List<BoardDto> list = boardService.selectBoardList();
         mv.addObject("list", list);
